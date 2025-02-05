@@ -5,6 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
     menuIcon.addEventListener('click', () => {
       menu.classList.toggle('active');
     });
+
+    // Fechar o menu ao clicar em um link
+    const menuLinks = document.querySelectorAll('.menu ul li a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('active');
+        });
+    });
   
     // Contador para perguntas avulsas
     let counter = 4; // Valor inicial mínimo
@@ -35,3 +43,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.plus').addEventListener('click', () => updateCounter(1));
     document.querySelector('.minus').addEventListener('click', () => updateCounter(-1));
   });
+ 
