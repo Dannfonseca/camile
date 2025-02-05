@@ -277,3 +277,14 @@ footer {
   background-color: #bbdefb;
   color: #003366;
 }
+
+/* Estilo do logo como link */
+.logo-link {
+    text-decoration: none;
+    color: inherit; /* Herda a cor do texto do logo */
+    cursor: pointer;
+  }
+  
+  .logo-link:hover {
+    color: #ffffff; /* Altera a cor ao passar o mouse */
+  }
