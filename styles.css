@@ -264,14 +264,14 @@ footer {
 /* Responsividade */
 @media (min-width: 768px) {
   header {
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
   }
-
   .menu {
-    display: flex; /* Exibe o menu horizontal em telas maiores */
-    position: static;
-    background-color: transparent;
-    box-shadow: none;
+    display: none; /* Esconde o menu horizontal */
+  }
+  .menu.active {
+    display: flex; /* Exibe o menu vertical quando ativo */
   }
 
   .menu-icon {
@@ -283,11 +283,11 @@ footer {
   }
 
   .hero h1 {
-    font-size: 3.5rem;
+    font-size: 2rem;
   }
 
   .section {
-    padding: 6rem 4rem;
+    padding: 2rem;
   }
 
 

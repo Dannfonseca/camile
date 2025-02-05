@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const menuIcon = document.getElementById('menuIcon');
-    const menu = document.getElementById('menu');
+  const menuIcon = document.getElementById('menuIcon');
+  const menu = document.getElementById('menu');
   
     menuIcon.addEventListener('click', () => {
       menu.classList.toggle('active');
@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fechar o menu ao clicar em um link
     const menuLinks = document.querySelectorAll('.menu ul li a');
     menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('active');
-        });
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+      });
     });
   
     // Contador para perguntas avulsas
@@ -44,3 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.minus').addEventListener('click', () => updateCounter(-1));
   });
  
+
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("Script carregado!");
+    // Restante do código...
+  });
