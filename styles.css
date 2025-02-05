@@ -21,7 +21,7 @@ header {
   background-color: #003366;
   color: white;
   padding: 1rem;
-  z-index: 1000; /* Mantém o menu acima do conteúdo */
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,91 +29,71 @@ header {
 
 /* Logo */
 .logo-centered {
-  position: static; /* Remove o posicionamento absoluto */
-  transform: none; /* Remove a transformação */
   text-align: left;
 }
-
-.logo-link {
-  text-decoration: none;
-}
-
 .logo-image {
-  max-width: 150px; /* Largura máxima da logo */
-  height: auto; /* Mantém a proporção da imagem */
-  cursor: pointer; /* Indica que é clicável */
+  max-width: 100px; /* Menor para mobile */
+  height: auto;
+  cursor: pointer;
 }
 
+/* Menu Hambúrguer */
+.menu-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  display: block;
+}
 
-/* Estilo do menu hambúrguer */
 .menu {
   display: none;
-  flex-direction: column; /* Exibir opções verticalmente */
+  flex-direction: column;
   background-color: #003366;
   position: absolute;
-  top: 100%; /* Posiciona abaixo do cabeçalho */
+  top: 100%;
   left: 0;
   width: 100%;
   padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .menu.active {
-  display: flex; /* Exibe o menu quando a classe 'active' é adicionada */
+  display: flex;
 }
-
 .menu ul {
   list-style: none;
   padding: 0;
 }
-
 .menu ul li a {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
-  text-align: center;
-  display: block;
   padding: 0.5rem;
-  transition: background 0.3s ease;
+  display: block;
+  text-align: center;
 }
-
 .menu ul li a:hover {
   background: #bbdefb;
   color: #003366;
 }
 
-/* Ícone do menu hambúrguer */
-.menu-icon {
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1000;
-  display: block; /* Visível apenas em telas pequenas */
-}
 /* Seção Hero */
 .hero {
   text-align: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #4CAF50, #00796B); /* Gradiente verde vibrante */
+  padding: 10rem 1rem 2rem; /* Ajuste para caber o header fixo */
+  background: linear-gradient(135deg, #4CAF50, #00796B);
   color: white;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
 }
-
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
-
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .whatsapp-button {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem;
   background-color: #25D366;
   color: white;
   text-decoration: none;
@@ -122,67 +102,44 @@ header {
   font-weight: bold;
   transition: transform 0.3s ease;
 }
-
 .whatsapp-button:hover {
   transform: scale(1.05);
 }
 
 /* Seções */
 .section {
-  padding: 4rem 2rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
-
 .section h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #003366;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
-
 .section p {
   font-size: 1rem;
   margin-bottom: 1rem;
-  line-height: 1.8;
-}
-
-.section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.section ul li {
-  margin: 0.5rem 0;
-  color: #003366;
 }
 
 /* Formulário de Contato */
 .contact-form {
-  padding-top: 6rem; /* Ajuste conforme necessário para compensar a altura do menu */
+  padding: 2rem 1rem;
   text-align: center;
 }
-
 .contact-form h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #003366;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
-
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-align: left;
 }
-
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
   color: #003366;
 }
-
 .form-group input,
 .form-group textarea {
   width: 100%;
@@ -192,16 +149,14 @@ header {
   font-size: 1rem;
   transition: border-color 0.3s ease;
 }
-
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: #003366;
   outline: none;
 }
-
 .submit-button {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem;
   background-color: #003366;
   color: white;
   border: none;
@@ -211,7 +166,6 @@ header {
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
 .submit-button:hover {
   transform: scale(1.05);
   background-color: #bbdefb;
@@ -223,14 +177,12 @@ header {
   margin-top: 2rem;
   text-align: center;
 }
-
 .counter-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
 }
-
 .counter-btn {
   background-color: #003366;
   color: white;
@@ -241,11 +193,9 @@ header {
   border-radius: 5px;
   transition: transform 0.3s ease;
 }
-
 .counter-btn:hover {
   transform: scale(1.1);
 }
-
 #counter-value {
   font-size: 1.5rem;
   font-weight: bold;
@@ -264,151 +214,31 @@ footer {
 /* Responsividade */
 @media (min-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
   }
   .menu {
-    display: none; /* Esconde o menu horizontal */
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
   }
-  .menu.active {
-    display: flex; /* Exibe o menu vertical quando ativo */
-  }
-
   .menu-icon {
-    display: none; /* Esconde o ícone do menu hambúrguer em telas maiores */
+    display: none;
   }
-}
   .logo-image {
-    max-width: 200px; /* Aumenta ligeiramente o tamanho em telas maiores */
+    max-width: 150px;
   }
-
+  .hero {
+    padding: 10rem 2rem 4rem;
+  }
   .hero h1 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
-
   .section {
-    padding: 2rem;
+    padding: 4rem 2rem;
   }
-
-
-/* Estilo da lista de serviços */
-.service-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.service-item {
-  background-color: #f1f1f1;
-  padding: 1rem;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.service-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #003366;
-}
-
-.service-item p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-/* Estilo do contador de perguntas avulsas */
-.avulsas-section {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.counter-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem 0;
-}
-
-.counter-btn {
-  background-color: #003366;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: transform 0.3s ease;
-}
-
-.counter-btn:hover {
-  transform: scale(1.1);
-}
-
-#counter-value {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0 1rem;
-}
-
-/* Estilo do formulário de contato */
-.contact-form {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.contact-form h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #003366;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-  text-align: left;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #003366;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #003366;
-  outline: none;
-}
-
-.submit-button {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background-color: #003366;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.submit-button:hover {
-  transform: scale(1.05);
-  background-color: #bbdefb;
-  color: #003366;
+  .contact-form {
+    padding: 4rem 2rem;
+  }
 }
