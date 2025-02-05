@@ -1,6 +1,5 @@
 /* Importação das fontes */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
 
 /* Reset básico */
 * {
@@ -21,7 +20,7 @@ body {
 header {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: #003366;
   color: white;
@@ -30,21 +29,31 @@ header {
 
 /* Logo "Camile Astrologia" centralizado */
 .logo-centered {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.5rem; /* Tamanho reduzido para caber melhor */
-  font-weight: bold;
-  color: #bbdefb;
-  text-transform: none;
-  letter-spacing: 2px;
-  cursor: default; /* Evita que o texto seja selecionável */
-  text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #bbdefb;
+    text-transform: none;
+    letter-spacing: 2px;
+    cursor: default;
+    position: absolute; /* Posiciona o logo no centro do cabeçalho */
+    left: 50%; /* Move o logo para o centro horizontal */
+    transform: translateX(-50%); /* Centraliza perfeitamente */
+    text-align: center;
+  }
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.logo-link:hover {
+  color: #ffffff;
 }
 
 /* Ícone do menu hambúrguer */
 .menu-icon {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
   font-size: 2rem;
   cursor: pointer;
   z-index: 1000;
@@ -90,10 +99,10 @@ header {
 .hero {
   text-align: center;
   padding: 2rem;
-  background-image: url('https://via.placeholder.com/1200x600'); /* Substitua por uma imagem real */
+  background-image: url('https://via.placeholder.com/1200x600');
   background-size: cover;
   background-position: center;
-  color: rgb(113, 152, 153);
+  color: white;
   padding-top: 10rem;
   padding-bottom: 10rem;
 }
@@ -110,31 +119,19 @@ header {
   margin-bottom: 2rem;
 }
 
-/* Botões de WhatsApp e Email */
-.whatsapp-button,
-.email-button {
+.whatsapp-button {
   display: inline-block;
   padding: 1rem 2rem;
-  margin: 0.5rem;
+  background-color: #25D366;
+  color: white;
   text-decoration: none;
   border-radius: 5px;
   font-size: 1rem;
-  transition: transform 0.3s ease, background-color 0.3s ease;
   font-weight: bold;
+  transition: transform 0.3s ease;
 }
 
-.whatsapp-button {
-  background-color: #25D366;
-  color: white;
-}
-
-.email-button {
-  background-color: #bbdefb;
-  color: #003366;
-}
-
-.whatsapp-button:hover,
-.email-button:hover {
+.whatsapp-button:hover {
   transform: scale(1.05);
 }
 
@@ -166,55 +163,6 @@ header {
 .section ul li {
   margin: 0.5rem 0;
   color: #003366;
-}
-
-.contact-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  header {
-    justify-content: space-between;
-  }
-
-  .logo-centered {
-    font-size: 3rem; /* Aumenta o tamanho para desktop */
-  }
-
-  .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: static;
-    background-color: transparent;
-  }
-
-  .menu-icon {
-    display: none;
-  }
-
-  .contact-options {
-    flex-direction: row;
-  }
-
-  .hero h1 {
-    font-size: 3.5rem;
-  }
-
-  .section {
-    padding: 6rem 4rem;
-  }
-}
-
-/* Rodapé */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #003366;
-  color: white;
-  font-size: 0.9rem;
 }
 
 /* Formulário de Contato */
@@ -278,13 +226,100 @@ footer {
   color: #003366;
 }
 
-/* Estilo do logo como link */
-.logo-link {
-    text-decoration: none;
-    color: inherit; /* Herda a cor do texto do logo */
-    cursor: pointer;
+/* Responsividade */
+@media (min-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
+
+  .logo-centered {
+    font-size: 3rem;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: static;
+    background-color: transparent;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .section {
+    padding: 6rem 4rem;
+  }
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #003366;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Estilo da seção de valores */
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
   
-  .logo-link:hover {
-    color: #ffffff; /* Altera a cor ao passar o mouse */
+  .service-item {
+    background-color: #bbdefb;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #003366;
+  }
+  
+  .service-item p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  /* Botões de compra */
+  .whatsapp-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  
+  .whatsapp-button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsividade */
+  @media (min-width: 768px) {
+    .service-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .service-item {
+      width: 45%;
+    }
   }
