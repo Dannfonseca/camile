@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.getElementById('menu');
 
   // Alternar o menu ao clicar no ícone
-  menuIcon.addEventListener('click', () => {
+  menuIcon.addEventListener('click', (event) => {
+    event.stopPropagation(); // Evita que o clique no ícone feche o menu imediatamente
     menu.classList.toggle('active');
   });
 
@@ -15,6 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Fechar o menu ao clicar fora dele
+  document.addEventListener('click', () => {
+    if (menu.classList.contains('active')) {
+      menu.classList.remove('active');
+    }
+  });
+
+  // Impedir que cliques dentro do menu fechem ele
+  menu.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+
   // Contador de perguntas avulsas
   let counter = 4;
   function updateCounter(change) {
@@ -23,12 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('counter-value').textContent = counter;
     updateBuyLink();
   }
+
   function updateBuyLink() {
     const buyButton = document.getElementById('buy-avulsas');
     const message = `Oi quero este serviço: ${counter} Perguntas Avulsas`;
     const whatsappLink = `https://wa.me/559191946826?text=${encodeURIComponent(message)}`;
     buyButton.href = whatsappLink;
   }
+
   updateBuyLink();
 
   // Adiciona eventos aos botões "+" e "-"
